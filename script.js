@@ -1,11 +1,19 @@
 async function download(){
 
-let url=document.getElementById("url").value
+let url = document.getElementById("url").value
 
-let api=`https://api.vevioz.com/api/button/mp4?url=${url}`
+if(url === ""){
+alert("Paste a link first")
+return
+}
 
-document.getElementById("result").innerHTML=
+let result = document.getElementById("result")
 
-`<iframe src="${api}" width="100%" height="200"></iframe>`
+result.innerHTML = `
+<p>Click the button below to download</p>
+<a href="https://en.savefrom.net/1-youtube-video-downloader-16/?url=${url}" target="_blank">
+<button>Open Downloader</button>
+</a>
+`
 
 }
